@@ -1,0 +1,192 @@
+*{
+  box-sizing: border-box;
+  background-origin: border-box;
+  margin: 2px;
+}
+
+:root{
+  /* first two colours come from Kuroi's Manga Palette */
+  /* https://lospec.com/palette-list/manga-pallete */
+  --col-01:#171219;
+  --col-02:#f2fbeb; /* These colours set up an ID that I am able to refer back to in my code when I need to. It also keeps track of the exact colour palette in a neat place. */
+  --col-03:#5252ff;
+  --col-04:#b6e878;
+  font-size: 16px;
+  scroll-behavior: smooth; /* Sets how the website acts when you scroll in any direction. */
+}
+
+body{
+  padding: 1rem;
+  background-color: var(--col-02);
+  color: var(--col-01);
+  transition: /* color */ 1s;
+
+}
+
+section{
+  margin-bottom: 2rem;
+}
+
+h1{
+  font-size: 3rem;
+  /* transition: 4s; */
+  transition: 0.5s; /* changes back from green in 4 secs */ 
+}
+
+/* Changes colour of heading from default colour to green */
+h1:hover{
+  color:var(--col-04);
+  transition: 0s; /* changes to green immediately */
+  animation: colorCycle 2s ease-in infinite;
+}
+
+@keyframes colorCycle /* you can call this whatever you like */ {
+  0%{color: var(--col-03);
+  /* font-size: 12px */;} /* Changes the font size */
+  50%{color: var(--col-04);} 
+  100%{color: var(--col-01);
+  /* font-size: 180px */;}
+}
+
+h2{
+  font-size: 2rem;
+}
+
+p{
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+figcaption{
+  width: fit-content;
+  font-size: 1rem;
+}
+
+a {
+  color: var(--col-03);
+}
+
+dl ul{
+  margin-bottom: 0;
+}
+
+li{
+  font-size: 1rem;
+}
+
+dd{
+  padding-left: 60px;
+}
+
+li ul{
+  padding-left: 40px;
+}
+
+.img-wrapper{
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.img-figure{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.article-img{
+  width: 80%;
+}
+
+.res-columns{
+  column-width: 25rem;
+}
+
+/* medium devices 600 - 992 */
+@media only screen and (min-width: 600px) {
+  :root{
+    font-size: 20px;
+  }
+  
+  .img-wrapper{
+    width: 75%;
+    margin: 1.5rem auto;
+  }
+}
+
+/* medium devices 992 + */
+@media only screen and (min-width: 992px) {
+  :root{
+    font-size: 24px;
+  }
+
+  .img-wrapper{
+    max-width: fit-content;
+    float: right;
+    margin: 1.5rem;
+  }
+}
+
+@media all and (prefers-reduced-motion){
+  :root{
+    scroll-behavior: smooth;
+  }
+}
+
+nav a {
+  color: var(--col-03);
+}
+
+button {
+  border-radius: 7px;
+  font-size: 14px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 7px;
+  padding-right: 7px;
+  cursor: pointer;
+  background-color: var(--col-02);
+  color: var(--col-01);
+}
+
+/* .icon-bar {
+  width: 100%;
+  background-color: var(--col-02);
+  overflow:hidden;
+  border: #171219;
+  font-size: 1.2rem;
+}
+
+.icon-bar a {
+  float: left;
+  width: 200px;
+  padding: 10px;
+  text-align: center;
+  transition: all 0.3s ease;
+  color: var(--col-01);
+  text-decoration: none;
+  
+}
+
+.icon-bar a:hover {
+  background-color: #d1d9cc;
+  text-decoration: underline;
+} */
+
+.topnav {
+  overflow: hidden;
+  background-color: var(--col-03);
+}
+
+.topnav a {
+  float: left;
+  color: var(--col-02);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.topnav a:hover {
+  background-color: var(--col-02);
+  color: var(--col-01);
+}
